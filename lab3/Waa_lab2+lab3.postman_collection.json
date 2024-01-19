@@ -1,0 +1,234 @@
+{
+	"info": {
+		"_postman_id": "b5751c7e-193a-409d-b23c-a9535fd21373",
+		"name": "Waa_lab2+lab3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31644546"
+	},
+	"item": [
+		{
+			"name": "c.\tPOST\tlocalhost:8080/users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Userx\",\n  \"posts\": [\n    {\n      \"title\": \"PostManxxx\",\n      \"content\": \"Content of the first post\",\n      \"author\": \"Author1\",\n      \"commentList\":\n      [{\"name\":\"Testing\"}\n        \n      ]\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "a.\tGET\tlocalhost:8080/users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "b.\tGET\tlocalhost:8080/users/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/users/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "d.\tGET\tlocalhost:8080/users/1/posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/users/1/posts",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"1",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6-\tMake a query that will return all the users that have more than 1 post ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/users/more-than-one-post",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"more-than-one-post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "8-\tMake a query that will find all the posts that match a given title.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/posts/title?title=PostManxxx",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts",
+						"title"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "PostManxxx"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6-\tCascade all the operations from the User to the Posts and Posts to the comments.",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/users/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "9-\tMake a query that will find the users that made posts within a given title ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/users/postTitle?postTitle=PostManxxx",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"postTitle"
+					],
+					"query": [
+						{
+							"key": "postTitle",
+							"value": "PostManxxx"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7-\tMake a query that will retrieve all the users that have more than (n) posts.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/users/postsCount/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"postsCount",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "10. localhost:8080/api/v1/users/111/posts/1/comments/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/users/1/filter?posts=1&comments=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"1",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "posts",
+							"value": "1"
+						},
+						{
+							"key": "comments",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

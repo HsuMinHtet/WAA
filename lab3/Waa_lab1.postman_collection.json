@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "7056fd8c-1b6d-4661-a022-622102394d7d",
+		"name": "Waa_lab1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31644546"
+	},
+	"item": [
+		{
+			"name": "a.\tGET\tlocalhost:8080/posts/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/posts/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "b.\tGET\tlocalhost:8080/posts/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/posts/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "c.\tPOST\tlocalhost:8080/posts/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"exercise_4\",\n    \"content\": \"exercise_4\",\n    \"author\": \"Tim\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/posts/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "h. will retrieve all the posts that contains a ‘text’ in the ‘author’ ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/posts/author/name/?text=T",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts",
+						"author",
+						"name",
+						""
+					],
+					"query": [
+						{
+							"key": "text",
+							"value": "T"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "g. all Posts made by an ‘author’ ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/posts/author/?author=Hsu",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts",
+						"author",
+						""
+					],
+					"query": [
+						{
+							"key": "author",
+							"value": "Hsu"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "e.\tUPDATE localhost:8080/posts/3",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 3,\n    \"title\": \"exercise_3\",\n    \"content\": \"exercise_3\",\n    \"author\": \"Tim\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/posts/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "d.\tDELETE localhost:8080/posts/3",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/posts/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts",
+						"5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

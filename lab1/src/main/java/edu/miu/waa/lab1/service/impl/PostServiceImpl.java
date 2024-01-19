@@ -3,7 +3,7 @@ package edu.miu.waa.lab1.service.impl;
 import edu.miu.waa.lab1.domain.Post;
 import edu.miu.waa.lab1.dto.PostDto;
 import edu.miu.waa.lab1.exception.PostException;
-import edu.miu.waa.lab1.repo.PostRepo;
+import edu.miu.waa.lab1.repo.PostRepository;
 import edu.miu.waa.lab1.service.PostService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -17,7 +17,7 @@ import java.util.List;
 public class PostServiceImpl implements PostService {
 
     private final ModelMapper modelMapper;
-    private final PostRepo postRepo;
+    private final PostRepository postRepo;
 
     @Override
     public List<PostDto> findAll() {
