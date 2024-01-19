@@ -11,6 +11,7 @@ import java.util.concurrent.atomic.LongAccumulator;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "user_Table")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
