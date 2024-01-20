@@ -5,14 +5,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.util.List;
-import java.util.concurrent.atomic.LongAccumulator;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "user_Table")
-public class User {
+//@Table(name = "user_Table")
+public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
