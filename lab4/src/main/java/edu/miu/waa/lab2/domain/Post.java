@@ -18,8 +18,8 @@ public class Post {
     String title;
     String content;
     String author;
-    @OneToMany(cascade = CascadeType.PERSIST,fetch = FetchType.EAGER)
-    @JoinColumn(name="id_Post")
+    @OneToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_Post")
     List<Comment> commentList;
 
 }
