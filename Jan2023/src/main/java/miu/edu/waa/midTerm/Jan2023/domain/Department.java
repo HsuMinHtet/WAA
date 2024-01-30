@@ -1,26 +1,24 @@
-package miu.edu.waa.Jun_2023.domain;
+package miu.edu.waa.midTerm.Jan2023.domain;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class Task {
+@NoArgsConstructor
+public class Department {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="task_id")
-    private Long id;
+    private Long dep_id;
 
-    private String description;
-
-    @ManyToOne
+    private String name;
+    @OneToMany(mappedBy = "department")
     @JsonBackReference
-    private Event event;
-
+    private List<Employee> employeeList;
 }

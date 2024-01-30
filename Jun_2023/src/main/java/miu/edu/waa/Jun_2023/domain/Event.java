@@ -1,9 +1,14 @@
 package miu.edu.waa.Jun_2023.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.BatchSize;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,8 +28,13 @@ public class Event {
     private String state;
 
     @ManyToMany(mappedBy = "eventList")
+    @JsonBackReference
     private List<Coordinator> coordinatorList= new ArrayList<>();
 
-    @OneToMany(mappedBy = "event", cascade = CascadeType.ALL)
-    private List<Task> taskList;
+    @OneToMany(cascade = CascadeType.ALL)
+   // @Fetch(FetchMode.SUBSELECT)
+    @JoinColumn(name ="event_id" )
+    @BatchSize(size = 2)
+    @JsonManagedReference
+    private List<Task> taskList= new ArrayList<>();
 }

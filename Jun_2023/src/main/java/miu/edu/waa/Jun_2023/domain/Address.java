@@ -1,5 +1,6 @@
 package miu.edu.waa.Jun_2023.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,6 +23,7 @@ public class Address {
     private String zipCode;
 
     @OneToOne(mappedBy = "address")
+    @JsonBackReference
     private Coordinator coordinator;
 
 }

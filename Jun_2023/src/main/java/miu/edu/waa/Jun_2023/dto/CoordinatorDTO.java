@@ -6,16 +6,15 @@ import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class EventDTO {
+public class CoordinatorDTO {
     private Long id;
+    private String name;
+    private String gender;
 
-    private String title;
+    private AddressDTO addressDTO;
 
-    private String state;
-
-    private List<TaskDTO> taskDTOList;
+    private List<EventDTO> eventDTOList= new ArrayList<>();
 }

@@ -1,10 +1,10 @@
 package miu.edu.waa.Jun_2023.domain;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.scheduling.annotation.EnableScheduling;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,8 +23,9 @@ public class Coordinator {
     private String name;
     private String gender;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name="address_id")
+    @JsonManagedReference
     private Address address;
 
     @ManyToMany(cascade = CascadeType.PERSIST)
@@ -32,5 +33,6 @@ public class Coordinator {
             joinColumns = {@JoinColumn(name="co_id")},
             inverseJoinColumns = {@JoinColumn(name = "event_id")}
     )
+    @JsonManagedReference
     private List<Event> eventList= new ArrayList<>();
 }

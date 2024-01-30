@@ -15,5 +15,5 @@ public class AddressDTO {
     private String state;
     private String zipCode;
 
-    private CoodinatorDTO coodinatorDTO;
+    private CoordinatorDTO coordinatorDTO;
 }

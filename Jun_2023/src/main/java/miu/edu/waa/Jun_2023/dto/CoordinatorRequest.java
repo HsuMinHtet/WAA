@@ -4,17 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-import java.util.List;
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class CoodinatorDTO {
+@NoArgsConstructor
+public class CoordinatorRequest {
     private Long id;
     private String name;
     private String gender;
-
-    private AddressDTO addressDTO;
-
-    private List<EventDTO> eventDTOList= new ArrayList<>();
 }

@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: jan2023
+  datasource:
+    password: root
+    url: jdbc:postgresql://localhost:5432/jan2023
+    username: postgres
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: false
+    show-sql: true
+    defer-datasource-initialization: true
+    generate-ddl: true
+  sql:
+    init:
+      mode: always
+server:
+  port: 9191
